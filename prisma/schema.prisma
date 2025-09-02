@@ -60,8 +60,6 @@ model User {
     accounts      Account[]
     sessions      Session[]
     posts         Post[]
-
-    Feed Feed[]
 }
 
 model VerificationToken {
@@ -78,8 +76,6 @@ model Feed {
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
     url       String
-    createdBy   User   @relation(fields: [createdById], references: [id])
-    createdById String
 
     @@index([name])
 }
