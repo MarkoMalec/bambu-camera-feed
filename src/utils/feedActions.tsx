@@ -15,3 +15,12 @@ export const addNewFeed = async (feedData: FeedData) => {
   });
   return feed;
 };
+
+export const removeFeed = async (feedId: string) => {
+  const feed = await prisma.feed.delete({
+    where: {
+      id: feedId,
+    },
+  });
+  return feed;
+};
